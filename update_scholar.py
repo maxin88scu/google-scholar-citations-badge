@@ -13,13 +13,13 @@ headers = {
 response = requests.get(URL, headers=headers)
 soup = BeautifulSoup(response.text, "html.parser")
 
-print("soup:",soup)
+# print("soup:",soup)
 # 获取总引用数
 citations_tag = soup.find_all("td", class_="gsc_rsb_std")
 citations = citations_tag[0].text if citations_tag else "N/A"
 
-print("citations_tag:",citations_tag)
-print("citations:",citations)
+# print("citations_tag:",citations_tag)
+# print("citations:",citations)
 
 # 构造符合 Shields.io 要求的 JSON
 badge_data = {

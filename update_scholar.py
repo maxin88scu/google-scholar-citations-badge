@@ -17,6 +17,9 @@ soup = BeautifulSoup(response.text, "html.parser")
 citations_tag = soup.find_all("td", class_="gsc_rsb_std")
 citations = citations_tag[0].text if citations_tag else "N/A"
 
+print("citations_tag:",citations_tag)
+print("citations:",citations)
+
 # 构造符合 Shields.io 要求的 JSON
 badge_data = {
     "schemaVersion": 1,

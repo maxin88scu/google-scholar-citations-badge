@@ -13,6 +13,7 @@ headers = {
 response = requests.get(URL, headers=headers)
 soup = BeautifulSoup(response.text, "html.parser")
 
+print("soup:",soup)
 # 获取总引用数
 citations_tag = soup.find_all("td", class_="gsc_rsb_std")
 citations = citations_tag[0].text if citations_tag else "N/A"

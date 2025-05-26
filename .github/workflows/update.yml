@@ -2,7 +2,7 @@ name: Update Citations Badge
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # 每天 UTC 0 点运行一次
+    - cron: '30 9 * * *'  # 每天 UTC 0 点运行一次
   workflow_dispatch:
 
 jobs:

@@ -21,16 +21,20 @@ citations = citations_tag[0].text if citations_tag else "N/A"
 # print("citations_tag:",citations_tag)
 # print("citations:",citations)
 
-# 构造符合 Shields.io 要求的 JSON
-badge_data = {
-    "schemaVersion": 1,
-    "label": "citations",
-    "message": citations,
-    "color": "9cf"
-}
+if citations != "N/A":
+    # 构造符合 Shields.io 要求的 JSON
+    badge_data = {
+        "schemaVersion": 1,
+        "label": "citations",
+        "message": citations,
+        "color": "9cf"
+    }
+    
+    # 输出到 JSON 文件
+    with open("citations.json", "w") as f:
+        json.dump(badge_data, f, indent=2)
+    
+    print(f"Updated citations.json with total citations: {citations}")
 
-# 输出到 JSON 文件
-with open("citations.json", "w") as f:
-    json.dump(badge_data, f, indent=2)
-
-print(f"Updated citations.json with total citations: {citations}")
+else:
+    print(f"Citations == N/A. Updated citations.json failed")

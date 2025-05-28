@@ -23,7 +23,7 @@ jobs:
     - name: Install dependencies
       run: pip install requests beautifulsoup4
 
-    - name: Run scraper 10 times
+    - name: Run scraper 2 times
       run: |
         for i in {1..2}
         do
